@@ -25,7 +25,7 @@ optimizer = optim.Adam(model.parameters(), lr=0.01)
 loss_fn = nn.CrossEntropyLoss()
 
 num_epochs=10
-train_losses = []
+
 for epoch in range(num_epochs):
     model.train()
     running_loss = 0.0
@@ -40,7 +40,7 @@ for epoch in range(num_epochs):
         running_loss += loss.item()
 
     avg_loss = running_loss/len(train_loader)    
-    train_losses.append(avg_loss)
+    
     
     # evaluate
     test_acc = evaluate(model, test_loader, device)
